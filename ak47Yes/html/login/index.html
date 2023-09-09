@@ -9,9 +9,10 @@
 </head>
 <body>
     <div class="form">
+        <form action="loginAction" method="post">
         <form action="post">
             <h1 class="formTitle">Вход</h1>
-            
+
             <div class="formDiv">
                 <input class="formInput" type="text" name="email" placeholder=" ">
                 <label class="formLabel">Email</label>
@@ -21,9 +22,13 @@
                 <input class="formInput" type="text" name="password" placeholder=" ">
                 <label class="formLabel">Пароль</label>
             </div>
-            
+
             <input class="formButton" type="submit" value="Войти">
         </form>
+        <div class="regLabel">
+
+            <a href="registration">Регистрация</a>
+        </div>
     </div>
 </body>
 </html>

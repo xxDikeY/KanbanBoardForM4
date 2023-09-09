@@ -1,0 +1,87 @@
+body{
+    background-image: url(html/login/167.jpg);
+    background-image: url(167.jpg);
+    background-repeat: round;
+    background-size:contain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 300px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px #ccc;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-color: white;
+    z-index: 0;
+}
+
+.formInput,
+.formButton{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.formTitle{
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: normal;
+}
+
+.formDiv{
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.formLabel{
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    color: #2e2e2e;
+    transition: 0.3s;
+}
+
+.formInput{
+    width: 100%;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    background-color: transparent;
+    outline:none;
+    transition: 0.3s;
+}
+
+.formInput:focus{
+    border-bottom: 1px solid #1a73a8;
+}
+
+.formButton{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0071f0;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formButton:focus,
+.formButton:hover{
+    background-color: rgba(0, 113, 240, 0.7);
+
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown) ~ .formLabel{
+    top: -18px;
+    font-size: 12px;
+    color: #727272;
+}
+

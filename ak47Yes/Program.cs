@@ -12,6 +12,7 @@ namespace ak47Yes
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
+
             app.Run(async (context) =>
             {
                 // Site open
@@ -21,7 +22,7 @@ namespace ak47Yes
                     context.Response.Redirect("/login");
                 }
 
-                if(context.Request.Path == "/login")
+                if (context.Request.Path == "/login")
                 {
                     context.Response.ContentType = "text/html; charset=utf-8";
                     await context.Response.SendFileAsync("html/login/index.html");
@@ -39,6 +40,7 @@ namespace ak47Yes
 
                 // Forms action
 
+
                 else if (context.Request.Path == "/loginAction")
                 {
                     var form = context.Request.Form;
@@ -52,7 +54,7 @@ namespace ak47Yes
 
             app.Run();
 
-            
+
         }
         public record User(string Mail, string Password);
     }

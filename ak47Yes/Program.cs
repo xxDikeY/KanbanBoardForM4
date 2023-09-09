@@ -14,7 +14,7 @@ namespace ak47Yes
 
             app.Run(async (context) =>
             {
-                // Login Open
+                // Site open
 
                 if (context.Request.Path == "/")
                 {
@@ -37,41 +37,13 @@ namespace ak47Yes
                     await context.Response.SendFileAsync("html/login/167.jpg");
                 }
 
-                // Reg open
-
-                if (context.Request.Path == "/registration")
-                {
-                    context.Response.ContentType = "text/html; charset=utf-8";
-                    await context.Response.SendFileAsync("html/reg/index.html");
-                }
-
-                else if (context.Request.Path == "/html/reg/style.css")
-                {
-                    await context.Response.SendFileAsync("html/reg/style.css");
-                }
-
-                else if (context.Request.Path == "/html/reg/167.jpg")
-                {
-                    await context.Response.SendFileAsync("html/reg/167.jpg");
-                }
-
                 // Forms action
 
                 else if (context.Request.Path == "/loginAction")
                 {
                     var form = context.Request.Form;
 
-                    string mail = form["email"];
-                    string password = form["password"];
-
-                    await context.Response.WriteAsync($"<div><p>Name: {mail}</p><p>Age: {password}</p></div>");
-                }
-
-                else if (context.Request.Path == "/regAction")
-                {
-                    var form = context.Request.Form;
-
-                    string mail = form["email"];
+                    string mail = form["mail"];
                     string password = form["password"];
 
                     await context.Response.WriteAsync($"<div><p>Name: {mail}</p><p>Age: {password}</p></div>");

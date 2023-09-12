@@ -1,9 +1,7 @@
 body{
-    background-image: url(html/login/167.jpg);
     background-image: url(167.jpg);
     background-size: 100% 100%;
-    background-repeat: round;
-    background-size:contain;
+    background-repeat: no-repeat;
 
     display: flex;
     justify-content: center;

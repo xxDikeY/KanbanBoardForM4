@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
+
 namespace ak47Yes
 {
     public class Program
@@ -11,6 +12,8 @@ namespace ak47Yes
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
+
+
             app.Run(async (context) =>
             {
                 // Login Open
@@ -19,7 +22,7 @@ namespace ak47Yes
                 {
                     context.Response.Redirect("/login");
                 }
-                if (context.Request.Path == "/login")
+                else if (context.Request.Path == "/login")
                 {
                     context.Response.ContentType = "text/html; charset=utf-8";
                     await context.Response.SendFileAsync("html/login/index.html");
@@ -33,7 +36,7 @@ namespace ak47Yes
                     await context.Response.SendFileAsync("html/login/167.jpg");
                 }
                 // Reg open
-                if (context.Request.Path == "/registration")
+                else if (context.Request.Path == "/registration")
                 {
                     context.Response.ContentType = "text/html; charset=utf-8";
                     await context.Response.SendFileAsync("html/reg/index.html");
@@ -46,6 +49,7 @@ namespace ak47Yes
                 {
                     await context.Response.SendFileAsync("html/reg/167.jpg");
                 }
+
                 // Forms action
                 else if (context.Request.Path == "/loginAction")
                 {
@@ -60,6 +64,13 @@ namespace ak47Yes
                     string mail = form["email"];
                     string password = form["password"];
                     await context.Response.WriteAsync($"<div><p>Name: {mail}</p><p>Age: {password}</p></div>");
+                }
+
+                // Status code
+
+                else if (context.Response.StatusCode == 404)
+                {
+                    await context.Response.WriteAsync($"Resource Not Found");
                 }
             });
             app.Run();
